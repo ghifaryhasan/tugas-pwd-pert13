@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Volume Bangun Ruang</title>
+    <script>
+        function hitungVolume() {
+            var pilihan = prompt(
+                "Pilih bangun ruang:\n" +
+                "1. Balok\n" +
+                "2. Tabung\n" +
+                "3. Bola\n" +
+                "4. Prisma Segitiga\n" +
+                "5. Kerucut"
+            );
+
+            pilihan = pilihan.toUpperCase();
+            var volume;
+
+            switch (pilihan) {
+
+                case "1":
+                case "BALOK":
+                    var p = parseFloat(prompt("Masukkan Panjang"));
+                    var l = parseFloat(prompt("Masukkan Lebar"));
+                    var t = parseFloat(prompt("Masukkan Tinggi"));
+                    volume = p * l * t;
+                    alert("Volume Balok = " + volume);
+                    break;
+
+                case "2":
+                case "TABUNG":
+                    var r = parseFloat(prompt("Masukkan Jari-jari"));
+                    var t = parseFloat(prompt("Masukkan Tinggi"));
+                    volume = 3.14 * r * r * t;
+                    alert("Volume Tabung = " + volume);
+                    break;
+
+                case "3":
+                case "BOLA":
+                    var r = parseFloat(prompt("Masukkan Jari-jari"));
+                    volume = 3.14 * r * r * r;
+                    alert("Volume Bola = " + volume);
+                    break;
+
+                case "4":
+                case "PRISMA":
+                    var ta = parseFloat(prompt("Masukkan Tinggi Alas"));
+                    var pa = parseFloat(prompt("Masukkan Panjang Alas"));
+                    var tp = parseFloat(prompt("Masukkan Tinggi Prisma"));
+                    volume = 0.5 * ta * pa * tp;
+                    alert("Volume Prisma Segitiga = " + volume);
+                    break;
+
+                case "5":
+                case "KERUCUT":
+                    var r = parseFloat(prompt("Masukkan Jari-jari Alas"));
+                    var t = parseFloat(prompt("Masukkan Tinggi Kerucut"));
+                    volume = (1/3) * 3.14 * r * r * t;
+                    alert("Volume Kerucut = " + volume);
+                    break;
+
+                default:
+                    alert("Pilihan tidak valid");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Program Hitung Volume Bangun Ruang</h2>
+    <button onclick="hitungVolume()">Hitung Volume</button>
+</body>
+</html>
